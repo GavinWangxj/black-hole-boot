@@ -22,6 +22,7 @@
 		<module>do-java</module>
 		<module>do-spring4</module>
 		<module>do-orm</module>
+		<module>do-nosql</module>
 	</modules>
 
 	<properties>

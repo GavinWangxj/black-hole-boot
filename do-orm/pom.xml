@@ -19,8 +19,9 @@
 	</parent>
 
 	<modules>
-		<module>spring-mybatis</module>
 		<module>mybatis</module>
+		<module>spring-mybatis</module>
+		<module>spring-boot-mybatis</module>
 	</modules>
 
 	<properties>
