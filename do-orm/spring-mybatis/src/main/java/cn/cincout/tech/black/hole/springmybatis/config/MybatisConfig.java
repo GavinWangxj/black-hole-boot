@@ -32,6 +32,7 @@ public class MybatisConfig {
         poolProperties.setUrl("jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8");
         poolProperties.setUsername("root");
         poolProperties.setPassword("root");
+
         return poolProperties;
     }
 
