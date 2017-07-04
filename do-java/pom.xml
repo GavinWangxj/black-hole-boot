@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>java-io</module>
+		<module>boot-mvn-profiles</module>
 	</modules>
 
 	<properties>
