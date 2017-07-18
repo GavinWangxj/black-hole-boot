@@ -10,14 +10,19 @@ import java.io.*;
  * @sine 1.8
  */
 public class BufferedInputFile {
-    public static String read(String fileName) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));
-        String s;
+    public static String read(String fileName) {
         StringBuilder builder = new StringBuilder();
-        while (((s = reader.readLine()) != null)) {
-            builder.append(s + "\n");
+        // try with resources
+        // java will call all AutoCloseable classes
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String s;
+            while (((s = reader.readLine()) != null)) {
+                builder.append(s + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
+
         return builder.toString();
     }
 

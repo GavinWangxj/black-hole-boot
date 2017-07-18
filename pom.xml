@@ -23,6 +23,8 @@
 		<module>do-spring4</module>
 		<module>do-orm</module>
 		<module>do-nosql</module>
+		<module>rpc-learning</module>
+		<module>cloud-learning</module>
 	</modules>
 
 	<properties>

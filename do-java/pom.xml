@@ -21,6 +21,8 @@
 	<modules>
 		<module>java-io</module>
 		<module>boot-mvn-profiles</module>
+		<module>java-concurrent</module>
+		<module>java-net</module>
 	</modules>
 
 	<properties>
