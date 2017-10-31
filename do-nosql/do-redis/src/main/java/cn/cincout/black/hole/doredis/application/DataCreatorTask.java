@@ -32,7 +32,7 @@ public class DataCreatorTask {
                 "zhang" + random.nextInt(),
                 "zhang@cincout.cn"
         );
-        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<User>(User.class));
+        //redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<User>(User.class));
         redisTemplate.convertAndSend("pinpoint.collector.channel", user);
 
         LOG.info("send user {} to redis channel.", user.toString());

@@ -29,8 +29,6 @@ public class HBaseClient {
     private  Connection connection;
     private  Admin admin;
 
-
-
     public HBaseClient() {
         configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", "localhost");

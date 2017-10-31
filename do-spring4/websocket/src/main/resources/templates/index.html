@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Sample</title>
+    <link th:href="@{/lib/css/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/lib/css/bootstrap/bootstrap-theme.min.css}" rel="stylesheet"/>
+    <script th:src="@{/lib/js/jquery.min.js}"></script>
+    <script th:src="@{/lib/js/bootstrap/bootstrap.min.js}"></script>
+
+
+    <script type="application/javascript">
+        var url = 'ws://' + window.location.host + '/ws/hello';
+        var socket = new WebSocket(url);
+
+        socket.onopen = function () {
+            console.log("opening...");
+            sayHello();
+        };
+
+        socket.onmessage = function (e) {
+            console.log("reveived message :", e.data);
+            var content = $("#content");
+            content.html(content.html() + "<br/>" + e.data);
+
+            setTimeout(function () {
+                sayHello();
+            }, 3000);
+        };
+
+        socket.onclose = function (e) {
+            console.log("closing...");
+            alert("closing...");
+        };
+
+        function sayHello() {
+            console.log("sending message...");
+            socket.send("from zhangzhaoyu!");
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="content"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

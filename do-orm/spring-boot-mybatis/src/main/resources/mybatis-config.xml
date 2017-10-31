@@ -21,7 +21,7 @@
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
     </settings>
 
-    <!--<mappers>
-        <mapper resource="inf/mapper/CustomerMapper.xml"/>
+   <!-- <mappers>
+        <mapper resource="mapper/CustomerMapper.xml"/>
     </mappers>-->
 </configuration>

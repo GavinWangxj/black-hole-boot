@@ -1,6 +1,7 @@
 package cn.cincout.black.hole.doredis.config;
 
 import cn.cincout.black.hole.doredis.application.listener.MessageDelegate;
+import cn.cincout.black.hole.doredis.application.listener.UserMsg2Listener;
 import cn.cincout.black.hole.doredis.application.listener.UserMsgListener;
 import cn.cincout.black.hole.doredis.application.listener.UserMsgListenerDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -29,6 +32,8 @@ public class RedisConfig {
 
     @Autowired
     private UserMsgListener userMsgListener;
+    @Resource
+    private UserMsg2Listener userMsg2Listener;
 
     @Bean
     public MessageListenerAdapter messageListenerAdapter(
@@ -48,9 +53,10 @@ public class RedisConfig {
         RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
 
         redisMessageListenerContainer.setConnectionFactory(redisConnectionFactory);
-        //redisMessageListenerContainer.addMessageListener(userMsgListener, channelTopic());
-        System.out.println("messageListenerAdapter : " + messageListenerAdapter);
-        redisMessageListenerContainer.addMessageListener(messageListenerAdapter, channelTopic());
+        redisMessageListenerContainer.addMessageListener(userMsgListener, channelTopic());
+        redisMessageListenerContainer.addMessageListener(userMsg2Listener, channelTopic());
+        //System.out.println("messageListenerAdapter : " + messageListenerAdapter);
+        //redisMessageListenerContainer.addMessageListener(messageListenerAdapter, channelTopic());
         return redisMessageListenerContainer;
     }
 

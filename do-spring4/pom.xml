@@ -14,13 +14,19 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
+		<version>1.5.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<modules>
 		<module>spring-boot</module>
 		<module>spring-security-boot</module>
+		<module>spring-dynamic-schedule</module>
+		<module>websocket</module>
+		<module>spring-batch</module>
+		<module>quartz-schedule</module>
+		<module>do-elastic-job</module>
+		<module>spring-multi-cache</module>
 	</modules>
 
 	<properties>

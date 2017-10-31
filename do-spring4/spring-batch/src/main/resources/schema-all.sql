@@ -1,0 +1,9 @@
+# CREATE DATABASE `spring_batch` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+DROP TABLE IF EXISTS people ;
+
+CREATE TABLE IF NOT EXISTS people (
+  person_id BIGINT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  first_name VARCHAR(20),
+  last_name VARCHAR(20)
+);

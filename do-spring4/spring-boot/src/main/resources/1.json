@@ -1,0 +1,48 @@
+{
+  levels: [
+    "OFF",
+    "ERROR",
+    "WARN",
+    "INFO",
+    "DEBUG",
+    "TRACE"
+  ],
+  loggers: {
+    ROOT: {
+      configuredLevel: "INFO",
+      effectiveLevel: "INFO"
+    },
+    cn: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech.black: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech.black.hole: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech.black.hole.springboot: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech.black.hole.springboot.SpringBootStartApplication: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    },
+    cn.cincout.tech.black.hole.springboot.application: {
+      configuredLevel: null,
+      effectiveLevel: "INFO"
+    }
+  }
+}

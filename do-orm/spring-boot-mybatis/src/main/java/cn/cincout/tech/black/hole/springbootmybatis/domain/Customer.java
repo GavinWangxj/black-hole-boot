@@ -1,23 +1,14 @@
 package cn.cincout.tech.black.hole.springbootmybatis.domain;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-/**
- * Created by zhaoyu on 16-9-14.
- *
- * @author zhaoyu
- * @date 17-4-28
- * @sine 1.8
- */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString(of = {"id", "name"})
+@Builder
 public class Customer {
-    private Long id;
+    private Integer id;
+
     private String name;
-    private String phoneNumber;
+
+    private String phonenumber;
 }

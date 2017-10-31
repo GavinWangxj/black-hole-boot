@@ -15,7 +15,6 @@ import java.util.List;
  */
 @Component
 @ConfigurationProperties(prefix = "self")
-
 @Data
 public class AppConfig {
 

@@ -28,6 +28,6 @@ public class UserMsgListener implements MessageListener {
     public void onMessage(Message message, byte[] pattern) {
         String channel = new String(message.getChannel());
         User user = (User) redisTemplate.getDefaultSerializer().deserialize(message.getBody());
-        LOG.info("received message channel {}, body is {}.", channel, user);
+        LOG.info("UserMsgListener received message channel {}, body is {}.", channel, user);
     }
 }

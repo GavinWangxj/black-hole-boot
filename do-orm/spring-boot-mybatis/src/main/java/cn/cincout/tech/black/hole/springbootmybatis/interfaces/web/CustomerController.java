@@ -21,13 +21,13 @@ public class CustomerController {
 
     @PostMapping(value = "/customer")
     public String save(@RequestBody Customer customer) {
-        customerMapper.saveCustomer(customer);
+        customerMapper.insert(customer);
         return "success";
     }
 
     @GetMapping(value = "/customer/{id}")
     public Customer find(@PathVariable("id") int id) {
-        return customerMapper.findById(id);
+        return customerMapper.selectByPrimaryKey(id);
     }
 
 }
